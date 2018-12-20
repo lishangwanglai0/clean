@@ -8,8 +8,6 @@ class Index_EweiShopV2Page extends WebPage
     //首页大图展示
     public function main()
     {
-        //OK
-        
         //查询数据
         $homeda=pdo_getall('abfuwu_home',array('type' => 0),array('id','name','img'),'id DESC');
 
