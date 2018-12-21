@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38d94d4b-3df7-40e2-a971-a4c5ea967edd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/ewei_shopv2/core/web/fuwu/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/addons/ewei_shopv2/core/web/fuwu/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,8 +51,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/addons/ewei_shopv2/core/web/fuwu/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+            <state relative-caret-position="243">
+              <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -179,109 +177,59 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="fuwu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fuwu" type="462c0819:PsiDirectoryNode" />
+              <item name="clean" type="b2602c69:ProjectViewProjectNode" />
+              <item name="clean" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="fuwu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fuwu" type="462c0819:PsiDirectoryNode" />
+              <item name="clean" type="b2602c69:ProjectViewProjectNode" />
+              <item name="clean" type="462c0819:PsiDirectoryNode" />
               <item name="addons" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="fuwu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fuwu" type="462c0819:PsiDirectoryNode" />
-              <item name="addons" type="462c0819:PsiDirectoryNode" />
-              <item name="ewei_shopv2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fuwu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fuwu" type="462c0819:PsiDirectoryNode" />
+              <item name="clean" type="b2602c69:ProjectViewProjectNode" />
+              <item name="clean" type="462c0819:PsiDirectoryNode" />
               <item name="addons" type="462c0819:PsiDirectoryNode" />
               <item name="ewei_shopv2" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="fuwu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fuwu" type="462c0819:PsiDirectoryNode" />
+              <item name="clean" type="b2602c69:ProjectViewProjectNode" />
+              <item name="clean" type="462c0819:PsiDirectoryNode" />
               <item name="addons" type="462c0819:PsiDirectoryNode" />
               <item name="ewei_shopv2" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="fuwu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fuwu" type="462c0819:PsiDirectoryNode" />
+              <item name="clean" type="b2602c69:ProjectViewProjectNode" />
+              <item name="clean" type="462c0819:PsiDirectoryNode" />
               <item name="addons" type="462c0819:PsiDirectoryNode" />
               <item name="ewei_shopv2" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="fuwu" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="fuwu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fuwu" type="462c0819:PsiDirectoryNode" />
-              <item name="addons" type="462c0819:PsiDirectoryNode" />
-              <item name="ewei_shopv2" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="goods" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fuwu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fuwu" type="462c0819:PsiDirectoryNode" />
-              <item name="addons" type="462c0819:PsiDirectoryNode" />
-              <item name="ewei_shopv2" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fuwu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fuwu" type="462c0819:PsiDirectoryNode" />
+              <item name="clean" type="b2602c69:ProjectViewProjectNode" />
+              <item name="clean" type="462c0819:PsiDirectoryNode" />
               <item name="addons" type="462c0819:PsiDirectoryNode" />
               <item name="ewei_shopv2" type="462c0819:PsiDirectoryNode" />
               <item name="template" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="fuwu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fuwu" type="462c0819:PsiDirectoryNode" />
+              <item name="clean" type="b2602c69:ProjectViewProjectNode" />
+              <item name="clean" type="462c0819:PsiDirectoryNode" />
               <item name="addons" type="462c0819:PsiDirectoryNode" />
               <item name="ewei_shopv2" type="462c0819:PsiDirectoryNode" />
               <item name="template" type="462c0819:PsiDirectoryNode" />
               <item name="web_v3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fuwu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fuwu" type="462c0819:PsiDirectoryNode" />
-              <item name="addons" type="462c0819:PsiDirectoryNode" />
-              <item name="ewei_shopv2" type="462c0819:PsiDirectoryNode" />
-              <item name="template" type="462c0819:PsiDirectoryNode" />
-              <item name="web_v3" type="462c0819:PsiDirectoryNode" />
-              <item name="fuwu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fuwu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fuwu" type="462c0819:PsiDirectoryNode" />
-              <item name="addons" type="462c0819:PsiDirectoryNode" />
-              <item name="ewei_shopv2" type="462c0819:PsiDirectoryNode" />
-              <item name="template" type="462c0819:PsiDirectoryNode" />
-              <item name="web_v3" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fuwu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fuwu" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -316,18 +264,18 @@
       <workItem from="1545208904642" duration="19743000" />
       <workItem from="1545267081801" duration="26279000" />
       <workItem from="1545309998012" duration="643000" />
-      <workItem from="1545322317476" duration="731000" />
+      <workItem from="1545322317476" duration="1332000" />
+      <workItem from="1545400104638" duration="245000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47396000" />
+    <option name="totallyTimeSpent" value="48242000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15117219" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15440582" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -682,8 +630,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/addons/ewei_shopv2/core/web/fuwu/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        <state relative-caret-position="243">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
         </state>
       </provider>
     </entry>
