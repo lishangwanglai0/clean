@@ -19,18 +19,23 @@
 
 </style>
 <div class="page-header">
-    当前位置：<span class="text-primary"></small>
+    当前位置：<span class="text-primary"><?php  if($data['name']) { ?>编辑<?php  } else { ?>新增<?php  } ?>图片</small>
     </span>
 </div>
 
 <div class="page-content">
     <?php if(cv('fuwu.homepage.add')) { ?>
     <div class="page-sub-toolbar">
-        <a class="btn btn-primary btn-sm" href="<?php  echo webUrl('fuwu/add')?>">新增图片</a>
+        <a class="btn btn-primary btn-sm" href="<?php  echo webUrl('fuwu/add')?>"><?php  if($data['name']) { ?>编辑<?php  } else { ?>新增<?php  } ?>图片</a>
     </div>
     <?php  } ?>
-    <form action="<?php  echo webUrl('fuwu/add')?>" method="post" class="form-horizontal form-validate" enctype="multipart/form-data">
-        <?php  if(empty($data['id'])) { ?>
+    <?php  if($data['content']) { ?>
+    <form action="<?php  if($data['id']) { ?><?php  echo webUrl('fuwu/homesamll/edit')?><?php  } else { ?><?php  echo webUrl('fuwu/homesamll/add')?><?php  } ?>" method="post" class="form-horizontal form-validate" enctype="multipart/form-data">
+        <?php  } else { ?>
+        <form action="<?php  if($data['id']) { ?><?php  echo webUrl('fuwu/edit')?><?php  } else { ?><?php  echo webUrl('fuwu/add')?><?php  } ?>" method="post" class="form-horizontal form-validate" enctype="multipart/form-data">
+
+        <?php  } ?>
+        <?php  if(!empty($data['id'])) { ?>
     <input type="hidden" name="id" value="<?php  echo $data['id'];?>"/>
         <?php  } ?>
     <div class="form-group">
@@ -42,6 +47,17 @@
 
         </div>
     </div>
+        <?php  if($data['content']) { ?>
+        <div class="form-group">
+            <label class="col-lg control-label must">简述</label>
+            <div class="col-sm-9 col-xs-12">
+
+                <input type="treatext" name="content" class="form-control" value="<?php  if($data['id']) { ?><?php  echo $data['content'];?><?php  } ?>"
+                       data-rule-required="true"/>
+
+            </div>
+        </div>
+        <?php  } ?>
     <div class="form-group">
         <label class="col-lg control-label must">图片</label>
         <div class="col-sm-9 col-xs-12">
@@ -50,7 +66,7 @@
             <?php  echo tpl_form_field_image2('img',$data['img'])?>
 
             <?php  if(!empty($data['img'])) { ?>
-            <a href='<?php  echo tomedia($data['img'])?>' target='_blank'>
+            <a href="<?php  echo tomedia($data['img'])?>" target='_blank'>
             <!--<img src="<?php  echo tomedia($data['img'])?>" style='width:100px;border:1px solid #ccc;padding:1px' onerror="this.src='../addons/ewei_shopv2/static/images/nopic.png'"/>-->
             </a>
             <?php  } ?>
@@ -73,5 +89,4 @@
     </div>
     </form>
 </div>
-
 <?php (!empty($this) && $this instanceof WeModuleSite || 1) ? (include $this->template('_footer', TEMPLATE_INCLUDEPATH)) : (include template('_footer', TEMPLATE_INCLUDEPATH));?>

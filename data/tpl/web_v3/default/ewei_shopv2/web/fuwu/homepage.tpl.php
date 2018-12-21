@@ -67,7 +67,7 @@
     }
 </style>
 <div class="page-header">
-    当前位置：<span class="text-primary">首页大图</span>
+    当前位置：<span class="text-primary">首页<?php  if($edit) { ?>小图<?php  } else { ?>大图<?php  } ?></span>
 </div>
 <div class="page-content">
 
@@ -79,7 +79,7 @@
         <input type="hidden" name="r"  value="goods" />
         <div class="page-toolbar">
             <span class="pull-left" style="margin-right:30px;">
-                <a class='btn btn-sm btn-primary' href="<?php  echo webUrl('fuwu/add')?>"><i class='fa fa-plus'></i> 添加商品</a>
+                <a class='btn btn-sm btn-primary' href="<?php  if($edit) { ?><?php  echo webUrl('fuwu/homesamll/add')?><?php  } else { ?><?php  echo webUrl('fuwu/add')?><?php  } ?>"><i class='fa fa-plus'></i> 新增图片</a>
 
 
 
@@ -104,9 +104,12 @@
                 <thead class="navbar-inner">
                 <tr>
                     <!--<th style="width:10%;"></th>-->
-                    <th style="width:30%;">排序</th>
-                    <th style="width:30%;">图片名称</th>
-                    <th style="width: 30%;">操作</th>
+                    <th style="width:25%;">排序</th>
+                    <th style="width:25%;">图片名称</th>
+                    <?php  if(!empty($edit)) { ?>
+                    <th style="width:25%;">简述</th>
+                    <?php  } ?>
+                    <th style="width: 25%;">操作</th>
                 </tr>
 
                 </thead>
@@ -122,10 +125,14 @@
                     <td>
                         <span data-toggle="tooltip" ><?php  echo $item['name'];?></span>
                     </td>
-
+                    <?php  if(!empty($edit)) { ?>
+                    <td>
+                        <span data-toggle="tooltip" ><?php  echo $item['content'];?></span>
+                    </td>
+                    <?php  } ?>
                     <td  style="overflow:visible;position:relative">
 
-                        <a  class='btn  btn-op btn-operation' href="<?php  echo webUrl('fuwu/edit', array('id' => $item['id']))?>">
+                        <a  class='btn  btn-op btn-operation' href="<?php  if($edit) { ?><?php  echo webUrl('fuwu/homesamll/edit', array('id' => $item['id']))?><?php  } else { ?><?php  echo webUrl('fuwu/edit', array('id' => $item['id']))?><?php  } ?>">
                                    <span data-toggle="tooltip" data-placement="top" title="" data-original-title="编辑">
 
                                         <i class='icow icow-bianji2'></i>
@@ -134,7 +141,7 @@
 
                                    </span>
                         </a>
-                        <a  class='btn  btn-op btn-operation' data-toggle='ajaxRemove' href="" data-confirm='如果此商品存在购买记录，会无法关联到商品, 确认要彻底删除吗?？'>
+                        <a  class='btn  btn-op btn-operation' data-toggle='ajaxRemove' href="<?php  if($edit) { ?><?php  echo webUrl('fuwu/homesamll/delete', array('id' => $item['id']))?><?php  } else { ?><?php  echo webUrl('fuwu/delete', array('id' => $item['id']))?><?php  } ?>" data-confirm='如果此商品存在购买记录，会无法关联到商品, 确认要彻底删除吗?？'>
                                     <span data-toggle="tooltip" data-placement="top" title="" data-original-title="彻底删除">
                                             <i class='icow icow-shanchu1'></i>
                                        </span>

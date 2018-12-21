@@ -19,18 +19,23 @@
 
 </style>
 <div class="page-header">
-    当前位置：<span class="text-primary"></small>
+    当前位置：<span class="text-primary">{if $data['name']}编辑{else}新增{/if}图片</small>
     </span>
 </div>
 
 <div class="page-content">
     {ifp 'fuwu.homepage.add'}
     <div class="page-sub-toolbar">
-        <a class="btn btn-primary btn-sm" href="{php echo webUrl('fuwu/add')}">新增图片</a>
+        <a class="btn btn-primary btn-sm" href="{php echo webUrl('fuwu/add')}">{if $data['name']}编辑{else}新增{/if}图片</a>
     </div>
     {/if}
-    <form action="{php echo webUrl('fuwu/add')}" method="post" class="form-horizontal form-validate" enctype="multipart/form-data">
-        {if empty($data['id'])}
+    {if $data['content']}
+    <form action="{if $data['id']}{php echo webUrl('fuwu/homesamll/edit')}{else}{php echo webUrl('fuwu/homesamll/add')}{/if}" method="post" class="form-horizontal form-validate" enctype="multipart/form-data">
+        {else}
+        <form action="{if $data['id']}{php echo webUrl('fuwu/edit')}{else}{php echo webUrl('fuwu/add')}{/if}" method="post" class="form-horizontal form-validate" enctype="multipart/form-data">
+
+        {/if}
+        {if !empty($data['id'])}
     <input type="hidden" name="id" value="{$data['id']}"/>
         {/if}
     <div class="form-group">
@@ -42,6 +47,17 @@
 
         </div>
     </div>
+        {if $data['content']}
+        <div class="form-group">
+            <label class="col-lg control-label must">简述</label>
+            <div class="col-sm-9 col-xs-12">
+
+                <input type="treatext" name="content" class="form-control" value="{if $data['id']}{$data['content']}{/if}"
+                       data-rule-required="true"/>
+
+            </div>
+        </div>
+        {/if}
     <div class="form-group">
         <label class="col-lg control-label must">图片</label>
         <div class="col-sm-9 col-xs-12">
@@ -50,7 +66,7 @@
             {php echo tpl_form_field_image2('img',$data['img'])}
 
             {if !empty($data['img'])}
-            <a href='{php echo tomedia($data['img'])}' target='_blank'>
+            <a href="{php echo tomedia($data['img'])}" target='_blank'>
             <!--<img src="{php echo tomedia($data['img'])}" style='width:100px;border:1px solid #ccc;padding:1px' onerror="this.src='../addons/ewei_shopv2/static/images/nopic.png'"/>-->
             </a>
             {/if}
@@ -73,5 +89,4 @@
     </div>
     </form>
 </div>
-
 {template '_footer'}

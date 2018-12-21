@@ -549,8 +549,98 @@ class System_EweiShopV2Model {
                                 "route" => "homesamll",
                                 "desc" => "首页小图"
                             ) ,
+
                         ),
                     ),
+            "success" => array(
+                "title"=> "成功案例",
+                "subtitle"=> "成功案例",
+                "icon" => "store",
+                "items" => array(
+                    array(
+                        "title" => "成功案例 ",
+                        "desc" => "成功案例",
+                        "extend" => "success.main",
+                        "perm" => "success.main"
+
+                    ) ,
+
+                ),
+            ),
+            "faq" => array(
+                "title"=> "常见问题",
+                "subtitle"=> "常见问题",
+                "icon" => "store",
+                "items" => array(
+                    array(
+                        "title" => "常见问题 ",
+                        "desc" => "常见问题",
+                        "extend" => "faq.main",
+                        "perm" => "faq.main"
+
+                    ) ,
+
+                ),
+            ),
+
+            "brilliant" => array(
+                    "title"=> "出彩服务",
+                    "subtitle"=> "出彩服务",
+                    "icon" => "store",
+                    "items" => array(
+                        array(
+                            "title" => "出彩托管服务 ",
+                            "desc" => "出彩托管服务",
+                            "extend" => "brilliant.main",
+                            "perm" => "brilliant.main"
+                        ) ,
+                        array(
+                            "title" => "出彩专项服务",
+                            "route" => "special",
+                            "desc" => "出彩专项服务"
+                        ) ,
+                        array(
+                            "title" => "出彩开荒服务",
+                            "route" => "reclaim",
+                            "desc" => "出彩开荒服务"
+                        ) ,
+
+                    ),
+                ),
+            " corporation" => array(
+                "title"=> "公司管理",
+                "subtitle"=> "公司管理",
+                "icon" => "store",
+                "items" => array(
+                    array(
+                        "title" => "公司介绍 ",
+                        "desc" => "公司介绍",
+                        "extend" => "corporation.main",
+                        "perm" => "recommend.main"
+                    ) ,
+                    array(
+                        "title" => "公司动态",
+                        "route" => "dynamic",
+                        "desc" => "公司动态"
+                    ) ,
+                    array(
+                        "title" => "保洁知识",
+                        "route" => "knowledge",
+                        "desc" => "保洁知识"
+                    ) ,
+                    array(
+                        "title" => "人员招聘",
+                        "route" => "recruit",
+                        "desc" => "人员招聘"
+                    ) ,
+                    array(
+                        "title" => "联系我们",
+                        "route" => "contactus",
+                        "desc" => "联系我们"
+                    ) ,
+
+                ),
+            ),
             "shop" => array(
                 "title" => "店铺",
                 "subtitle" => "店铺首页",
