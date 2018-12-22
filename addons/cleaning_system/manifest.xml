@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="http://www.we7.cc" versionCode="">
+	<application setting="true">
+		<name><![CDATA[保洁服务PC端]]></name>
+		<identifie><![CDATA[cleaning_system]]></identifie>
+		<version><![CDATA[1.0]]></version>
+		<type><![CDATA[enterprise]]></type>
+		<ability><![CDATA[企业官网展示]]></ability>
+		<description><![CDATA[企业官网展示]]></description>
+		<author><![CDATA[终南山的浪子]]></author>
+		<url><![CDATA[http://bbs.we7.cc/]]></url>
+	</application>
+	<platform>
+		<subscribes>
+		</subscribes>
+		<handles>
+		</handles>
+		<rule embed="false" />
+		<card embed="false" />
+	</platform>
+	<bindings>
+		<cover>
+			<entry title="首页" do="different" state="" direct="true" />
+		</cover>
+		<menu>
+			<entry title="导航" do="navigation" state="" direct="false" />
+		</menu>
+		<webapp>
+			<entry title="保洁服务" do="cleaning" state="" direct="true" />
+		</webapp>
+	</bindings>
+	<permissions>
+	</permissions>
+	<install><![CDATA[install.php]]></install>
+	<uninstall><![CDATA[uninstall.php]]></uninstall>
+	<upgrade><![CDATA[upgrade.php]]></upgrade>
+</manifest>

@@ -9,7 +9,7 @@ class Recruit_EweiShopV2Page extends WebPage
     public function main()
     {
         //查询数据
-        $homeda=pdo_getall('abfuwu_employment',array(),array('id','position','numbers','created_at'),'id DESC');
+        $homeda=pdo_getall('abfuwu_employment',array(),array(),'id DESC');
 
         include($this->template("fuwu/information"));
     }
@@ -22,10 +22,10 @@ class Recruit_EweiShopV2Page extends WebPage
     {
         global $_W;
         global $_GPC;
-        if( !$_GPC["name"] ){
+        if( !$_GPC["address"] ){
             include($this->template("fuwu/informationadd"));
         }else{
-                var_dump(234234);die;
+
             if(empty($_GPC['position'])){
                 show_json(0,'职位名称不能为空');
             }
@@ -37,7 +37,7 @@ class Recruit_EweiShopV2Page extends WebPage
             if(!empty($resul)){
                 $id = pdo_insertid();
                 plog('corporation.recruit.add', '新增人员招聘 ID: ' . $id);
-                show_json(1, array('url' => webUrl('corporation/recruit/main')));
+                show_json(1, array('url' => webUrl('corporation/recruit')));
             }
         }
     }
@@ -47,7 +47,7 @@ class Recruit_EweiShopV2Page extends WebPage
         global $_W;
         $id=$_GPC['id'];
 
-        if(!$_GPC['name']){
+        if(!$_GPC['address']){
 
             $data=pdo_get('abfuwu_employment',array('id'=>$id),array());
 //

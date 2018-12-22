@@ -9,7 +9,7 @@ class Contactus_EweiShopV2Page extends WebPage
     public function main()
     {
         //查询数据
-        $homeda=pdo_getall('abfuwu_contactus',array(),array('id','address','after_sale'),'id DESC');
+        $homeda=pdo_getall('abfuwu_contactus',array(),array(),'id DESC');
 
         include($this->template("fuwu/relation"));
     }
@@ -22,7 +22,7 @@ class Contactus_EweiShopV2Page extends WebPage
     {
         global $_W;
         global $_GPC;
-        if( !$_GPC["name"] ){
+        if( !$_GPC["address"] ){
             include($this->template("fuwu/relationadd"));
         }else{
 
@@ -49,7 +49,7 @@ class Contactus_EweiShopV2Page extends WebPage
         global $_W;
         $id=$_GPC['id'];
 
-        if(!$_GPC['name']){
+        if(!$_GPC['address']){
 
             $data=pdo_get('abfuwu_contactus',array('id'=>$id),array());
 //

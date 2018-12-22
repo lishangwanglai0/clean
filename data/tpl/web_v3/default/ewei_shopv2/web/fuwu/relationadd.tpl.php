@@ -45,19 +45,39 @@
         </div>
 
         <div class="form-group">
-            <label class="col-lg control-label must">内容</label>
+            <label class="col-lg control-label must">保洁托管服务电话</label>
             <div class="col-sm-9 col-xs-12">
 
-                <input type="textarea" name="trusteeship" class="form-control" value="<?php  if($data['id']) { ?><?php  echo $data['trusteeship'];?><?php  } ?>"
+                <input type="text" name="trusteeship" class="form-control" value="<?php  if($data['id']) { ?><?php  echo $data['trusteeship'];?><?php  } ?>"
                        data-rule-required="true"/>
 
             </div>
         </div>
         <div class="form-group">
-            <label class="col-lg control-label must">来源</label>
+        <label class="col-lg control-label must">后勤增值服务电话</label>
+        <div class="col-sm-9 col-xs-12">
+
+            <input type="textarea" name="logistics" class="form-control" value="<?php  if($data['id']) { ?><?php  echo $data['logistics'];?><?php  } ?>"
+                   data-rule-required="true"/>
+
+        </div>
+    </div>
+
+        <div class="form-group">
+            <label class="col-lg control-label must">售后电话</label>
             <div class="col-sm-9 col-xs-12">
 
-                <input type="textarea" name="logistics" class="form-control" value="<?php  if($data['id']) { ?><?php  echo $data['logistics'];?><?php  } ?>"
+                <input type="textarea" name="after_sale" class="form-control" value="<?php  if($data['id']) { ?><?php  echo $data['after_sale'];?><?php  } ?>"
+                       data-rule-required="true"/>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-lg control-label must">商务合作邮箱</label>
+            <div class="col-sm-9 col-xs-12">
+
+                <input type="text" name="collaborate" class="form-control" value="<?php  if($data['id']) { ?><?php  echo $data['collaborate'];?><?php  } ?>"
                        data-rule-required="true"/>
 
             </div>

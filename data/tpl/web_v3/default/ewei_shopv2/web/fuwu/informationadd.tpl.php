@@ -48,7 +48,7 @@
             <label class="col-lg control-label must">招聘人数</label>
             <div class="col-sm-9 col-xs-12">
 
-                <input type="text" name="numberss" class="form-control" value="<?php  if($data['id']) { ?><?php  echo $data['numberss'];?><?php  } ?>"
+                <input type="text" name="numbers" class="form-control" value="<?php  if($data['id']) { ?><?php  echo $data['numbers'];?><?php  } ?>"
                        data-rule-required="true"/>
 
             </div>
