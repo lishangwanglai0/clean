@@ -954,7 +954,9 @@ if( !empty($id) )
 	$params = pdo_fetchall("select * from " . tablename("ewei_shop_goods_param") . " where goodsid=:id order by displayorder asc", array( ":id" => $id ));
 	if( !empty($item["thumb"]) ) 
 	{
+
 		$piclist = array_merge(array( $item["thumb"] ), iunserializer($item["thumb_url"]));
+
 	}
 	$item["content"] = m("common")->html_to_images($item["content"]);
 	$item["buycontent"] = m("common")->html_to_images($item["buycontent"]);

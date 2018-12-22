@@ -8,6 +8,7 @@ class Index_EweiShopV2Page extends WebPage
     //首页大图展示
     public function main()
     {
+
         //查询数据
         $homeda=pdo_getall('abfuwu_home',array('type' => 0),array('id','name','img'),'id DESC');
 
@@ -46,7 +47,7 @@ class Index_EweiShopV2Page extends WebPage
         global $_GPC;
         global $_W;
         $id=$_GPC['id'];
-        if($_GPC['name']){
+        if(!$_GPC['name']){
             $data=pdo_get('abfuwu_home',array('id'=>$id),array('id','name','img'));
             include($this->template("fuwu/homeadd"));
         }else{
@@ -57,7 +58,7 @@ class Index_EweiShopV2Page extends WebPage
                 show_json(0,'图片不能为空');
             }
             $arr=['name'=>$_GPC['name'],'img'=>$_GPC['img']];
-            $resul=pdo_update('abfuwu_home',$arr);
+            $resul=pdo_update('abfuwu_home',$arr,array('id'=>$id));
             if(!empty($resul)){
                 $id = pdo_insertid();
                 plog('fuwu.add', '添加图片 ID: ' . $id);
@@ -65,6 +66,18 @@ class Index_EweiShopV2Page extends WebPage
             }
         }
 
+
+    }
+    //删除
+    public function delete()
+    {
+        global $_GPC;
+        $id = $_GPC['id'] ? intval($_GPC["id"]) : 0;
+
+        pdo_delete("abfuwu_home", array( "id" => $id ));
+//        plog("goods.edit", "从回收站彻底删除商品<br/>ID: ". $id  );
+
+        show_json(1, array('url' => webUrl('fuwu')));
 
     }
 

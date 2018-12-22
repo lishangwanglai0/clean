@@ -1,4 +1,4 @@
-{template '_header'}
+<?php defined('IN_IA') or exit('Access Denied');?><?php (!empty($this) && $this instanceof WeModuleSite || 1) ? (include $this->template('_header', TEMPLATE_INCLUDEPATH)) : (include template('_header', TEMPLATE_INCLUDEPATH));?>
 <style>
     tbody tr td{
         position: relative;
@@ -67,7 +67,7 @@
     }
 </style>
 <div class="page-header">
-    当前位置：<span class="text-primary">首页{if $edit}小图{else}大图{/if}</span>
+    当前位置：<span class="text-primary">出彩专项服务</span>
 </div>
 <div class="page-content">
 
@@ -76,10 +76,10 @@
         <input type="hidden" name="a" value="entry" />
         <input type="hidden" name="m" value="ewei_shopv2" />
         <input type="hidden" name="do" value="web" />
-        <input type="hidden" name="r"  value="goods" />
+        <input type="hidden" name="r"  value="success" />
         <div class="page-toolbar">
             <span class="pull-left" style="margin-right:30px;">
-                <a class='btn btn-sm btn-primary' href="{if $edit}{php echo webUrl('fuwu/homesamll/add')}{else}{php echo webUrl('fuwu/add')}{/if}"><i class='fa fa-plus'></i> 新增图片</a>
+                <a class='btn btn-sm btn-primary' href="<?php  echo webUrl('brilliant/special/add')?>"><i class='fa fa-plus'></i> 新增出彩专项服务</a>
 
 
 
@@ -93,46 +93,48 @@
 
         <div class="col-md-12">
             <!--<div class="page-table-header">-->
-                <!--<input type='checkbox' />-->
-                <!--<div class="btn-group">-->
-                    <!--<button class="btn btn-default btn-sm  btn-operation" type="button" data-toggle='batch-remove' data-confirm="确认要删除吗?" data-href="{php echo webUrl('goods/delete')}">-->
-                        <!--<i class='icow icow-shanchu1'></i> 删除</button>-->
+            <!--<input type='checkbox' />-->
+            <!--<div class="btn-group">-->
+            <!--<button class="btn btn-default btn-sm  btn-operation" type="button" data-toggle='batch-remove' data-confirm="确认要删除吗?" data-href="<?php  echo webUrl('goods/delete')?>">-->
+            <!--<i class='icow icow-shanchu1'></i> 删除</button>-->
 
-                <!--</div>-->
+            <!--</div>-->
             <!--</div>-->
             <table class="table table-responsive">
                 <thead class="navbar-inner">
                 <tr>
                     <!--<th style="width:10%;"></th>-->
-                    <th style="width:25%;">排序</th>
-                    <th style="width:25%;">图片名称</th>
-                    {if !empty($edit)}
-                    <th style="width:25%;">简述</th>
-                    {/if}
-                    <th style="width: 25%;">操作</th>
+                    <th style="width:20%;">排序</th>
+                    <th style="width:20%;">服务标题</th>
+                    <th style="width:20%;">价格</th>
+                    <th style="width:20%;">服务面积</th>
+                    <th style="width: 20%;">操作</th>
                 </tr>
 
                 </thead>
                 <tbody>
-                {loop $homeda $item}
+                <?php  if(is_array($homeda)) { foreach($homeda as $item) { ?>
                 <tr>
                     <!--<td>-->
-                        <!--<input type='checkbox'  value="{$item['id']}"/>-->
+                    <!--<input type='checkbox'  value="<?php  echo $item['id'];?>"/>-->
                     <!--</td>-->
                     <td>
-                        <span data-toggle="tooltip" >{$item['id']}</span>
+                        <span data-toggle="tooltip" ><?php  echo $item['id'];?></span>
                     </td>
                     <td>
-                        <span data-toggle="tooltip" >{$item['name']}</span>
+                        <span data-toggle="tooltip" ><?php  echo $item['name'];?></span>
                     </td>
-                    {if !empty($edit)}
+
                     <td>
-                        <span data-toggle="tooltip" >{$item['content']}</span>
+                        <span data-toggle="tooltip" ><?php  echo $item['money'];?></span>
                     </td>
-                    {/if}
+                    <td>
+                        <span data-toggle="tooltip" ><?php  echo $item['acreage'];?></span>
+                    </td>
+
                     <td  style="overflow:visible;position:relative">
 
-                        <a  class='btn  btn-op btn-operation' href="{if $edit}{php echo webUrl('fuwu/homesamll/edit', array('id' => $item['id']))}{else}{php echo webUrl('fuwu/edit', array('id' => $item['id']))}{/if}">
+                        <a  class='btn  btn-op btn-operation' href="<?php  echo webUrl('brilliant/special/edit', array('id' => $item['id']))?>">
                                    <span data-toggle="tooltip" data-placement="top" title="" data-original-title="编辑">
 
                                         <i class='icow icow-bianji2'></i>
@@ -141,14 +143,14 @@
 
                                    </span>
                         </a>
-                        <a  class='btn  btn-op btn-operation' data-toggle='ajaxRemove' href="{if $edit}{php echo webUrl('fuwu/homesamll/delete', array('id' => $item['id']))}{else}{php echo webUrl('fuwu/delete', array('id' => $item['id']))}{/if}" data-confirm='如果此商品存在购买记录，会无法关联到商品, 确认要彻底删除吗?？'>
+                        <a  class='btn  btn-op btn-operation' data-toggle='ajaxRemove' href="<?php  echo webUrl('brilliant/special/delete', array('id' => $item['id']))?>" data-confirm='如果此商品存在购买记录，会无法关联到商品, 确认要彻底删除吗?？'>
                                     <span data-toggle="tooltip" data-placement="top" title="" data-original-title="彻底删除">
                                             <i class='icow icow-shanchu1'></i>
                                        </span>
                         </a>
                     </td>
                 </tr>
-                {/loop}
+                <?php  } } ?>
 
                 </tbody>
 

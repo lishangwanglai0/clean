@@ -9,6 +9,7 @@ class Task_EweiShopV2Page extends WebPage
 	{
 		$this->runTasks();
 	}
+
 }
 
 ?>
