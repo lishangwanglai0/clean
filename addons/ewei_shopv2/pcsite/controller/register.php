@@ -7,6 +7,7 @@ class RegisterController extends Controller
 {
 	public function index()
 	{
+		var_dump(12345);die;
 		global $_W;
 		global $_GPC;
 		$setting = $_W['setting'];
@@ -17,12 +18,13 @@ class RegisterController extends Controller
 		}
 
 		$basicset = $this->basicset();
-		$title = '注册帐户';
+		$title = '注册帐';
 		include $this->template('register/index');
 	}
 
 	public function check()
 	{
+
 		global $_W;
 		global $_GPC;
 		$setting = $_W['setting'];

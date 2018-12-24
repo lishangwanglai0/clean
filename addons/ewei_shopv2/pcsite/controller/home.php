@@ -10,6 +10,8 @@ class HomeController extends Controller
 
 	public function __construct()
 	{
+		echo 1;
+		die;
 		$this->init();
 	}
 

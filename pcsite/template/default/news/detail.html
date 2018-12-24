@@ -3,7 +3,7 @@
     <div class="list-menu">
         <div class="list-menu-left">
             <i><img src="./static/images/list-menu-left.png" alt=""></i>当前位置：
-            <a href="{php echo webUrl()}">首页</a>>><a href="{php echo webUrl('news/index')}">新闻中心</a>>>{php echo mb_substr(strip_tags(htmlspecialchars_decode($article['title'])),0,30,'utf-8')}
+            <a href="{php echo webUrl()}">首页</a>>><a href="{php echo webUrl('news/index')}">新闻中心66</a>>>{php echo mb_substr(strip_tags(htmlspecialchars_decode($article['title'])),0,30,'utf-8')}
         </div>
         <div class="list-menu-right">
         </div>
@@ -23,7 +23,7 @@
             <form action="{php echo webUrl('news/index')}" method="post">
                 <input type="search" name="keyword" class="list-menu-search" placeholder="快速检索" value="">
             </form>
-            <p class="detail_correlation_title">相关文章</p>
+            <p class="detail_correlation_title">相关文章3</p>
             <ul class="detail_correlation_ul">
                 {loop $articles $index $item}
                 <li><a href="{php echo webUrl(array('news/detail','id'=>$item['id']))}">+ {$item['title']}</a></li>

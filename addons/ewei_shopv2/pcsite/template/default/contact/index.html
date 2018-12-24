@@ -19,7 +19,7 @@
             <form action="{php echo webUrl('article/index')}" method="post">
                 <input type="search" name="keyword" class="list-menu-search" placeholder="快速检索" value="">
             </form>
-            <p class="detail_correlation_title">相关文章</p>
+            <p class="detail_correlation_title">相关文章4</p>
             <ul class="detail_correlation_ul">
                 {loop $articles $index $item}
                 <li><a href="{php echo webUrl(array('news/detail','id'=>$item['id']))}" target="_blank">+ {$item['title']}</a></li>

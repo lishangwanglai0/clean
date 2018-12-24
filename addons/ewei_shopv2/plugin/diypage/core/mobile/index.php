@@ -100,135 +100,106 @@ class Index_EweiShopV2Page extends PluginMobilePage
 		}
 		include($this->template());
 	}
-	public function getmerch() 
-	{
-		global $_W;
-		global $_GPC;
-		if( $_W["ispost"] ) 
-		{
-			$lat = floatval($_GPC["lat"]);
-			$lng = floatval($_GPC["lng"]);
-			$item = $_GPC["item"];
-			if( empty($item) || !p("merch") ) 
-			{
-				show_json(0, "参数错误或未启用多商户");
-			}
-			$condition = " and status=1 and uniacid=:uniacid ";
-			$params = array( ":uniacid" => $_W["uniacid"] );
-			$orderby = " isrecommand desc, id asc ";
-			if( $item["params"]["merchdata"] == 0 ) 
-			{
-				$merchids = array( );
-				foreach( $item["data"] as $index => $data ) 
-				{
-					if( !empty($data["merchid"]) ) 
-					{
-						$merchids[] = $data["merchid"];
-					}
-				}
-				$newmerchids = implode(",", $merchids);
-				if( empty($newmerchids) ) 
-				{
-					show_json(0, "商户组数据为空");
-				}
-				$condition .= " and id in( " . $newmerchids . " ) ";
-			}
-			else 
-			{
-				if( $item["params"]["merchdata"] == 1 ) 
-				{
-					if( empty($item["params"]["cateid"]) ) 
-					{
-						show_json(0, "商户组cateid为空");
-					}
-					$condition .= " and cateid=:cateid ";
-					$params["cateid"] = $item["params"]["cateid"];
-				}
-				else 
-				{
-					if( $item["params"]["merchdata"] == 2 ) 
-					{
-						if( empty($item["params"]["groupid"]) ) 
-						{
-							show_json(0, "商户组groupid为空");
-						}
-						$condition .= " and groupid=:groupid ";
-						$params["groupid"] = $item["params"]["groupid"];
-					}
-					else 
-					{
-						if( $item["params"]["merchdata"] == 3 ) 
-						{
-							$condition .= " and isrecommand=1 ";
-						}
-					}
-				}
-			}
-			$limit = 0;
-			if( !empty($item["params"]["merchdata"]) && !empty($item["params"]["merchnum"]) ) 
-			{
-				$limit = $item["params"]["merchnum"];
-			}
-			$limitsql = "";
-			if( empty($item["params"]["merchsort"]) && !empty($limit) ) 
-			{
-				$limitsql = " limit " . $limit;
-			}
-			if( $item["params"]["merchsort"] == 0 && $item["params"]["merchdata"] == 0 ) 
-			{
-				$orderby = " field (id," . $newmerchids . ") ";
-			}
-			$merchs = pdo_fetchall("select id, merchname as `name`, logo as thumb, status, `desc`, address, tel, lng, lat from " . tablename("ewei_shop_merch_user") . " where 1 " . $condition . " order by " . $orderby . $limitsql, $params);
-			if( empty($merchs) ) 
-			{
-				show_json(0, "未查询到数据");
-			}
-			$merchs = set_medias($merchs, array( "thumb" ));
-			foreach( $merchs as $index => $merch ) 
-			{
-				if( !empty($merch["lat"]) && !empty($merch["lng"]) ) 
-				{
-					$distance = m("util")->GetDistance($lat, $lng, $merch["lat"], $merch["lng"], 2);
-					$merchs[$index]["distance"] = $distance;
-				}
-			}
-			if( empty($lat) || empty($lng) || empty($item["params"]["merchsort"]) ) 
-			{
-				show_json(1, array( "list" => $merchs ));
-			}
-			if( !empty($item["params"]["openlocation"]) ) 
-			{
-				$sort = SORT_DESC;
-				if( 1 < $item["params"]["merchsort"] ) 
-				{
-					$sort = SORT_ASC;
-				}
-				$merchs = m("util")->multi_array_sort($merchs, "distance", $sort);
-				if( !empty($limit) && !empty($merchs) ) 
-				{
-					$newmerchs = array( );
-					foreach( $merchs as $index => $merch ) 
-					{
-						if( $index + 1 <= $limit ) 
-						{
-							$newmerchs[$index] = $merch;
-						}
-						else 
-						{
-							continue;
-						}
-					}
-					$merchs = $newmerchs;
-				}
-			}
-			show_json(1, array( "list" => $merchs ));
-		}
-		show_json(0, "错误的请求");
-	}
+	public function getmerch()
+    {
+        global $_W;
+        global $_GPC;
+        if ($_W["ispost"]) {
+            $lat = floatval($_GPC["lat"]);
+            $lng = floatval($_GPC["lng"]);
+            $item = $_GPC["item"];
+            if (empty($item) || !p("merch")) {
+                show_json(0, "参数错误或未启用多商户");
+            }
+            $condition = " and status=1 and uniacid=:uniacid ";
+            $params = array(":uniacid" => $_W["uniacid"]);
+            $orderby = " isrecommand desc, id asc ";
+            if ($item["params"]["merchdata"] == 0) {
+                $merchids = array();
+                foreach ($item["data"] as $index => $data) {
+                    if (!empty($data["merchid"])) {
+                        $merchids[] = $data["merchid"];
+                    }
+                }
+                $newmerchids = implode(",", $merchids);
+                if (empty($newmerchids)) {
+                    show_json(0, "商户组数据为空");
+                }
+                $condition .= " and id in( " . $newmerchids . " ) ";
+            } else {
+                if ($item["params"]["merchdata"] == 1) {
+                    if (empty($item["params"]["cateid"])) {
+                        show_json(0, "商户组cateid为空");
+                    }
+                    $condition .= " and cateid=:cateid ";
+                    $params["cateid"] = $item["params"]["cateid"];
+                } else {
+                    if ($item["params"]["merchdata"] == 2) {
+                        if (empty($item["params"]["groupid"])) {
+                            show_json(0, "商户组groupid为空");
+                        }
+                        $condition .= " and groupid=:groupid ";
+                        $params["groupid"] = $item["params"]["groupid"];
+                    } else {
+                        if ($item["params"]["merchdata"] == 3) {
+                            $condition .= " and isrecommand=1 ";
+                        }
+                    }
+                }
+            }
+            $limit = 0;
+            if (!empty($item["params"]["merchdata"]) && !empty($item["params"]["merchnum"])) {
+                $limit = $item["params"]["merchnum"];
+            }
+            $limitsql = "";
+            if (empty($item["params"]["merchsort"]) && !empty($limit)) {
+                $limitsql = " limit " . $limit;
+            }
+            if ($item["params"]["merchsort"] == 0 && $item["params"]["merchdata"] == 0) {
+                $orderby = " field (id," . $newmerchids . ") ";
+            }
+            $merchs = pdo_fetchall("select id, merchname as `name`, logo as thumb, status, `desc`, address, tel, lng, lat from " . tablename("ewei_shop_merch_user") . " where 1 " . $condition . " order by " . $orderby . $limitsql, $params);
+            if (empty($merchs)) {
+                show_json(0, "未查询到数据");
+            }
+            $merchs = set_medias($merchs, array("thumb"));
+            foreach ($merchs as $index => $merch) {
+                if (!empty($merch["lat"]) && !empty($merch["lng"])) {
+                    $distance = m("util")->GetDistance($lat, $lng, $merch["lat"], $merch["lng"], 2);
+                    $merchs[$index]["distance"] = $distance;
+                }
+            }
+            if (empty($lat) || empty($lng) || empty($item["params"]["merchsort"])) {
+                show_json(1, array("list" => $merchs));
+            }
+            if (!empty($item["params"]["openlocation"])) {
+                $sort = SORT_DESC;
+                if (1 < $item["params"]["merchsort"]) {
+                    $sort = SORT_ASC;
+                }
+                $merchs = m("util")->multi_array_sort($merchs, "distance", $sort);
+                if (!empty($limit) && !empty($merchs)) {
+                    $newmerchs = array();
+                    foreach ($merchs as $index => $merch) {
+                        if ($index + 1 <= $limit) {
+                            $newmerchs[$index] = $merch;
+                        } else {
+                            continue;
+                        }
+                    }
+                    $merchs = $newmerchs;
+                }
+
+                show_json(1, array("list" => $merchs));
+            }
+            show_json(0, "错误的请求");
+        }
+    }
 	public function uECt2c4xuD5oQ6ZGgym2() 
 	{
 		require(__DIR__ . "/menu.php");
 	}
+
 	public function getInfo() 
 	{
 		global $_GPC;

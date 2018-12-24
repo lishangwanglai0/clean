@@ -6,6 +6,7 @@ class LoginController extends Controller
 {
 	public function index() 
 	{
+
 		global $_W;
 		global $_GPC;
 		$basicset = $this->basicset();

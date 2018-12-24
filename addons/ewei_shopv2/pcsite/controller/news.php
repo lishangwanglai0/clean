@@ -31,7 +31,7 @@ class NewsController extends Controller
 		$category = pdo_fetchall('select id,name from ' . tablename('ewei_shop_system_company_category') . ' where status = 1 order by displayorder asc ');
 		$pager = $this->pagination($total, $pindex, $psize);
 		$basicset = $this->basicset();
-		$title = '新闻中心';
+		$title = '新闻中心44';
 		include $this->template('news/index');
 	}
 
