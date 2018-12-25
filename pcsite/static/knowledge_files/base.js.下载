@@ -1,0 +1,75 @@
+// JavaScript Document
+
+$(document).ready(function(){
+	$("#m-trade").bind({
+		mouseenter:function(){
+			$(this).addClass("current");
+			$(this).find(".nbox").show();
+			},
+		mouseleave:function(){
+			$(this).removeClass("current");
+			$(this).find(".nbox").hide();
+			}
+		});
+	
+	$("#m-user").bind({
+		mouseenter:function(){
+			$(this).addClass("current");
+			$(this).find(".nbox").show();
+			},
+		mouseleave:function(){
+			$(this).removeClass("current");
+			$(this).find(".nbox").hide();
+			}
+		});
+	
+	function set_float_position(idn){
+		var vtop=$(idn).height()*0.5;
+		$(idn).css({"margin-top":-vtop+"px"});
+		$(idn).fadeIn();
+		}
+	
+	set_float_position("#float");	
+});	
+
+function ClearTXT(idn,text){
+	var value=$(idn).val();
+	if(value==text)	$(idn).val('');
+	}
+function FillTXT(idn,text){
+	var value=$(idn).val();
+	if(value=='') $(idn).val(text);
+	}
+	
+//调用弹出层
+function openlayer(idn1,idn2){
+	$("#"+idn1).fadeIn();
+	var vh=$("#"+idn2).height();
+	$("#"+idn2).css({"margin-top":-(vh*0.5)+"px"});
+	$("#"+idn2).fadeIn();
+	}
+function closelayer(idn1,idn2){
+	$("#"+idn1).fadeOut();
+	$("#"+idn2).fadeOut();
+	}
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

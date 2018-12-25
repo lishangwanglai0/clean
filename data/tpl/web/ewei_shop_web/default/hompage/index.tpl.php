@@ -101,78 +101,36 @@
 <!--banner-->
 <div id="banner">
     <!---->
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
+    <div class="swiper-container slide-bg">
+        <div class="swiper-wrapper slide-wp">
+            <?php  if(is_array($home)) { foreach($home as $item) { ?>
+            <?php  if(empty($item['type'])) { ?>
             <div class="swiper-slide">
-                <img src="./static/home_files/1-1510261606429B.jpg" alt="" />
+                <img src="/attachment/<?php  echo $item['img'];?>" alt="" />
             </div>
-            <div class="swiper-slide">
-                <img src="./static/home_files/1-1P10QAU3C1.png" alt="" />
-            </div>
+            <?php  } ?>
+            <?php  } } ?>
         </div>
         <!-- 如果需要分页器 -->
         <div class="swiper-pagination"></div>
     </div>
-
-    <!--<div class="slide-bg">
-        <div class="slide-wp">
-            <div id="slides" class="slides" style="overflow: hidden;">
-
-                <div class="slidesjs-container" style="overflow: hidden; position: relative; width: 1900px; height: 1067.23px;">
-                    <div class="slidesjs-control" style="position: relative; left: 0px; width: 1900px; height: 1067.23px;"><div class="slidesjs-slide" slidesjs-index="0" style="position: absolute; top: 0px; left: 0px; width: 100%; z-index: 10; backface-visibility: hidden; display: block; opacity: 0.988764;">
-                    <div class="slideChild"><a class="a-jd opa js-log-login" style="top:280px;left:310px;width:230px;height:70px;" href="./static/home_files/1-1510261606429B.jpg"></a></div>
-                    <a href="" style="position: absolute;top: 0;left: 0;z-index: 9;width:945px;height:398px;"><img class="slideImg" src="./static/home_files/1-1510261606429B.jpg"></a>
-                </div>
-                    <div class="slidesjs-slide" slidesjs-index="1" style="position: absolute; top: 0px; left: 0px; width: 100%; z-index: 0; backface-visibility: hidden; display: none;">
-                    <div class="slideChild"><a class="a-jd opa js-log-login" style="top:280px;left:310px;width:230px;height:70px;" href="./static/home_files/1-1P10QAU3C1.png"></a></div>
-                    <a href="" style="position: absolute;top: 0;left: 0;z-index: 9;width:945px;height:398px;"><img class="slideImg" src="./static/home_files/1-1P10QAU3C1.png"></a>
-                </div>
-                    <div class="slidesjs-slide" slidesjs-index="2" style="position: absolute; top: 0px; left: 0px; width: 100%; z-index: 0; backface-visibility: hidden; display: none;">
-                    <div class="slideChild"><a class="a-jd opa js-log-login" style="top:280px;left:310px;width:230px;height:70px;" href="./static/home_files/1-1P10QAQC36.png"></a></div>
-                    <a href="" style="position: absolute;top: 0;left: 0;z-index: 9;width:945px;height:398px;"><img class="slideImg" src="./static/home_files/1-1P10QAQC36.png"></a>
-                </div>
-                    <div class="slidesjs-slide" slidesjs-index="3" style="position: absolute; top: 0px; left: 0px; width: 100%; z-index: 0; backface-visibility: hidden; opacity: 0.011236;">
-                    <div class="slideChild"><a class="a-jd opa js-log-login" style="top:280px;left:310px;width:230px;height:70px;" href="./static/home_files/1-1P10Q6344I14.png"></a></div>
-                    <a href="" style="position: absolute;top: 0;left: 0;z-index: 9;width:945px;height:398px;"><img class="slideImg" src="./static/home_files/1-1P10Q6344I14.png"></a>
-                </div>
-                </div>
-                </div>
-
-                <ul class="slidesjs-pagination"><li class="slidesjs-pagination-item"><a href="#" data-slidesjs-item="0" class="active">1</a></li><li class="slidesjs-pagination-item"><a href="#" data-slidesjs-item="1" class="">2</a></li><li class="slidesjs-pagination-item"><a href="#" data-slidesjs-item="2" class="">3</a></li><li class="slidesjs-pagination-item"><a href="#" data-slidesjs-item="3" class="">4</a></li></ul></div>
-        </div>
-    </div>-->
-    <!---->
 </div>
 
 
-
+<div id="F1box">
     <div class="F1box" id="F1box">
-
+        <?php  if(is_array($home)) { foreach($home as $item) { ?>
+        <?php  if(!empty($item['type'])) { ?>
         <div class="leftF1box">
             <div class="pic"><a href="#"><img src="./static/home_files/1-150RQ61441646.png" width="155" height="155"></a></div>
-            <p style="font-size:24px; padding-top:20px; color:#000;">省时</p>
-            <p>省去不断的招聘并管理保洁员的时间；
-                专业设备 专业人员，提供高效快捷服务。</p>
+            <p style="font-size:24px; padding-top:20px; color:#000;"><?php  echo $item['name'];?></p>
+            <p><?php  echo $item['content'];?></p>
         </div>
-        <div class="leftF1box" style="margin: 0px 0px 0px 80px;">
-            <div class="pic"><a href="#"><img src="./static/home_files/1-150RQ6153Y59.png" width="155" height="155"></a></div>
-            <p style="font-size:24px; padding-top:20px; color:#000;">省心</p>
-            <p>心已经很累了，您应该节省精力去专注更重要的事情。
-                把保洁工作放心的交给我们吧。</p>
-        </div>
-        <div class="leftF1box" style="float: right;">
-            <div class="pic"><a href="#"><img src="./static/home_files/1-150RQ6155XS.png" width="155" height="155"></a></div>
-            <p style="font-size:24px; padding-top:20px; color:#000;">省钱</p>
-            <p>省下招聘成本，劳动关系处理成本，福利成本等用工费用。
-                尽管我们知道您可能不差钱。</p>
-        </div>
-
-
-
-
+        <?php  } ?>
+        <?php  } } ?>
         <div class="clear"></div>
     </div>
-
+</div>
 
 <script type="text/javascript">
     var F1box=document.getElementById('F1box');
@@ -186,33 +144,17 @@
         <div class="bt"><span><a href="ccfw/">更多&nbsp;<img src="./static/home_files/icos_03.png"></a></span>服务产品&nbsp; /&nbsp;<font><b>P</b>roducts</font></div>
         <div class="leftF2boxpic">
             <ul>
+                <?php  if(is_array($trusteeship)) { foreach($trusteeship as $item) { ?>
                 <li>
                     <a href="chucaituoguanfuwu/37.html">
-                        <div class="imglist"><img src="./static/home_files/1-150Z9135134128.jpg" width="189" height="142"></div>
-                        <div class="picbt">价格：2-3小时：1500元/月</div>
+                        <div class="imglist"><img src="/attachment/<?php  echo $item['img'];?>" width="189" height="142"></div>
+                        <div class="picbt">价格：<?php  echo $item['schedule'];?>：<?php  echo $item['money'];?></div>
                         <div class="picdtext">
-                            <p>参考面积：300平米以内 日常服务范围： 办公桌、办公椅、窗户、办公设备除尘...</p>
+                            <p>参考面积: <?php  echo $item['acreage'];?> 日常服务范围： <?php  echo $item['scope'];?></p>
                         </div>
                     </a>
                 </li>
-                <li>
-                    <a href="chucaituoguanfuwu/38.html">
-                        <div class="imglist"><img src="./static/home_files/1-150Z913511E59.jpg" width="189" height="142"></div>
-                        <div class="picbt">价格：3-4小时：1900元/月</div>
-                        <div class="picdtext">
-                            <p>参考面积：300-500平米 日常服务范围： 办公桌、办公椅、窗户、办公设备除尘。...</p>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="chucaituoguanfuwu/39.html">
-                        <div class="imglist"><img src="./static/home_files/1-150Z9135055149.jpg" width="189" height="142"></div>
-                        <div class="picbt">价格：4-5小时：2300元/月</div>
-                        <div class="picdtext">
-                            <p>参考面积：500-700平米 日常服务范围： 办公桌、办公椅、窗户、办公设备除尘。...</p>
-                        </div>
-                    </a>
-                </li>
+                <?php  } } ?>
 
 
                 <div class="clear"></div>
@@ -223,18 +165,9 @@
     <div class="rightF2box">
         <div class="bt"><span><a href="cjwt/">更多&nbsp;<img src="./static/home_files/icos_03.png"></a></span>常见问题&nbsp;/&nbsp;problem</div>
         <ul id="listtext">
-            <li><span>2016-04-07</span><a href="cjwt/"><font>·</font>相比于其他保洁公司，你们有</a></li>
-            <li><span>2016-03-29</span><a href="cjwt/"><font>·</font>如果和贵公司合作了，保洁员</a></li>
-            <li><span>2016-03-29</span><a href="cjwt/"><font>·</font>如果我公司对保洁服务不满意</a></li>
-            <li><span>2016-03-29</span><a href="cjwt/"><font>·</font>灵活托管新模式，共享阿姨资</a></li>
-            <li><span>2016-01-12</span><a href="cjwt/"><font>·</font>保洁托管和自己招保洁员哪个</a></li>
-            <li><span>2015-09-15</span><a href="cjwt/"><font>·</font>你们公司做保洁托管专业吗？</a></li>
-            <li><span>2015-09-15</span><a href="cjwt/"><font>·</font>为什么要进行保洁托管？</a></li>
-            <li><span>2015-09-06</span><a href="cjwt/"><font>·</font>你们公司是正规的保洁公司吗</a></li>
-            <li><span>2015-09-06</span><a href="cjwt/"><font>·</font>保洁员在服务时意外受伤了怎</a></li>
-            <li><span>2015-09-06</span><a href="cjwt/"><font>·</font>保洁工作我们不需要一整天贵</a></li>
-
-
+            <?php  if(is_array($successful)) { foreach($successful as $item) { ?>
+            <li><span><?php  echo $item['created_at'];?></span><a href="cjwt/"><font>·</font><?php  echo $item['name'];?></a></li>
+            <?php  } } ?>
         </ul>
     </div>
     <div class="clear"></div>
@@ -397,8 +330,7 @@
     <div class="text-box" style="height:300px; overflow-y:auto;">
         <!---->
         <div class="con_ny">
-            <script type="text/javascript" src="./static/css/swiper-4.4.1.min.js"></script>
-            <link rel="stylesheet" href="./static/css/swiper.min.css">
+
             <script type="text/javascript">
                 $(document).ready(function(){
 
@@ -416,10 +348,12 @@
                 }
             </script>
             <script src="./static/home_files/jquery.slides.min.js.下载"></script>
-            <script>
+            <script type="text/javascript" src="./static/css/swiper-4.4.1.min.js"></script>
+            <link rel="stylesheet" href="./static/css/swiper.min.css">
+            <script type="text/javascript">
                 var mySwiper = new Swiper ('.swiper-container', {
-                    loop: true, // 循环模式选项
-                    autoplay: 1000,
+                    // loop: true, // 循环模式选项
+                    autoplay: true,
                     speed:300,
                     // 如果需要分页器
                     pagination: {
